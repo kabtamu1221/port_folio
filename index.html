@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kabtamu Getaw Temtim — Cybersecurity Specialist</title>
-<meta name="description" content="Portfolio of Kabtamu Getaw Temtim, Computer Science graduate specializing in cybersecurity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -20,7 +19,6 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
 header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
 nav{display:flex;justify-content:space-between;align-items:center;height:64px}
@@ -57,15 +55,14 @@ h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin-bottom:32px}
 .timeline h3{font-size:1.05rem}
 .timeline p{color:var(--muted);font-size:.96rem}
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;transition:border-color .2s}
-.cert-card:hover{border-color:var(--accent)}
+.cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
 .cert-card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
 .cert-card p{color:var(--muted);font-size:.95rem}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
 .contact-item{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;text-decoration:none;transition:all .25s ease}
-.contact-item:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.contact-item:hover{border-color:var(--accent);transform:translateY(-3px)}
 .contact-item .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
 .contact-item .icon.email{background:#E8F5F5;color:#1F6F78}
 .contact-item .icon.phone{background:#EAF7EE;color:#2E7D32}
@@ -79,51 +76,57 @@ h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin-bottom:32px}
   .contact-item .icon.location{background:#33261A;color:#FFB74D}
   .contact-item .icon.linkedin{background:#1A2733;color:#64B5F6}
 }
-.contact p{max-width:34em;color:var(--muted);margin-bottom:8px}
 footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 
-/* ===== SAMPLE FORMS (Modal) ===== */
-.modal-overlay{
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);
-  z-index:1000;align-items:center;justify-content:center;padding:20px;
-}
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;padding:16px}
 .modal-overlay.active{display:flex}
-.modal{
-  background:var(--card);border-radius:12px;max-width:520px;width:100%;
-  max-height:90vh;overflow-y:auto;padding:28px;position:relative;
-  border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
-.modal h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:6px}
-.modal .subtitle{color:var(--muted);font-size:.95rem;margin-bottom:22px}
-.modal .close{
-  position:absolute;top:16px;right:18px;background:none;border:none;
-  font-size:1.5rem;cursor:pointer;color:var(--muted);line-height:1;
-}
+.modal{background:var(--card);border-radius:12px;width:100%;max-width:980px;max-height:92vh;overflow:auto;position:relative;border:1px solid var(--line)}
+.modal .close{position:absolute;top:12px;right:16px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--muted);z-index:5}
 .modal .close:hover{color:var(--ink)}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.9rem;font-weight:500;margin-bottom:6px}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:6px;
-  background:var(--bg);color:var(--ink);font-family:inherit;font-size:.95rem;
-}
-.form-group textarea{min-height:90px;resize:vertical}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-actions{display:flex;gap:10px;margin-top:22px;justify-content:flex-end}
-.form-actions .btn{padding:10px 18px}
 
-@media (max-width:720px){
-  nav ul{gap:14px;font-size:.88rem}
+/* ===== CareBridge HIS Login Styles ===== */
+.his-layout{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.his-side{background:#0E3B43;color:#E6F1F2;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
+.his-brand{display:flex;align-items:center;gap:12px;font-size:1.2rem;font-weight:600;margin-bottom:24px}
+.his-side h1{font-size:1.7rem;line-height:1.25;font-weight:600;margin-bottom:12px}
+.his-side p{color:#A9C7CB;font-size:.95rem}
+.his-checks{margin-top:24px;list-style:none;display:grid;gap:10px}
+.his-checks li{display:flex;gap:10px;align-items:flex-start;color:#CFE3E5;font-size:.9rem}
+.his-checks svg{flex:none;width:18px;height:18px;margin-top:2px;stroke:#7CC8D2}
+.his-main{display:flex;align-items:center;justify-content:center;padding:32px 28px;background:#F3F6F6}
+.his-card{width:100%;max-width:380px;background:#fff;border:1px solid #D3DDDF;border-radius:12px;padding:28px}
+.his-card h2{font-size:1.4rem;margin-bottom:4px;color:#14262B}
+.his-card .sub{color:#5D7076;margin-bottom:20px;font-size:.92rem}
+.his-field{margin-bottom:16px}
+.his-field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px;color:#14262B}
+.his-field input,.his-field select{width:100%;padding:11px 13px;border:1px solid #9FB0B4;border-radius:8px;font:inherit;background:#fff;color:#14262B}
+.his-field input:focus,.his-field select:focus{border-color:#0F7C8A;outline:3px solid #BFE4E9;outline-offset:0}
+.his-pw{position:relative}
+.his-pw input{padding-right:60px}
+.his-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:#0F7C8A;font:inherit;font-weight:600;font-size:.85rem;padding:8px;cursor:pointer}
+.his-row{display:flex;justify-content:space-between;align-items:center;margin:4px 0 18px;font-size:.9rem;gap:10px;flex-wrap:wrap;color:#14262B}
+.his-row label{display:flex;align-items:center;gap:8px;font-weight:400;margin:0}
+.his-row input{width:auto}
+.his-row a{color:#0F7C8A;font-weight:500;text-decoration:none}
+.his-submit{width:100%;padding:12px;border:0;border-radius:8px;background:#0E3B43;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.his-submit:hover{background:#155560}
+.his-notice{margin-top:18px;padding-top:16px;border-top:1px solid #D3DDDF;font-size:.8rem;color:#5D7076}
+
+@media (max-width:800px){
+  .his-layout{grid-template-columns:1fr}
+  .his-side{padding:24px}
+  .his-side h1,.his-checks{display:none}
   .project,.about{grid-template-columns:1fr}
   .timeline li{grid-template-columns:1fr;gap:4px}
-  .hero{padding:64px 0 48px}
-  .form-row{grid-template-columns:1fr}
+  nav ul{gap:12px;font-size:.88rem}
 }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <nav aria-label="Main">
+    <nav>
       <a class="logo" href="#top">Kabtamu Getaw</a>
       <ul>
         <li><a href="#work">Work</a></li>
@@ -137,8 +140,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </header>
 
 <main id="top">
-
-  <!-- Hero -->
   <div class="wrap hero">
     <h1>I secure systems and build practical software that protects digital assets.</h1>
     <p>
@@ -151,15 +152,13 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Work / Projects -->
   <section id="work">
     <div class="wrap">
       <h2>Selected work</h2>
       <div class="projects">
 
-        <!-- Project 1 -->
         <article class="project">
-          <div class="thumb" role="img" aria-label="Project preview">Security Platform</div>
+          <div class="thumb">Security Platform</div>
           <div>
             <h3>Security Monitoring & Incident Response Platform</h3>
             <p>
@@ -167,31 +166,24 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
               real-time threat detection, monitoring, and incident response using Wazuh and SIEM concepts.
             </p>
             <ul class="tags">
-              <li>Python</li>
-              <li>React</li>
-              <li>Wazuh</li>
-              <li>SIEM</li>
+              <li>Python</li><li>React</li><li>Wazuh</li><li>SIEM</li>
             </ul>
             <button class="link" onclick="openModal('securityModal')">View Sample Form →</button>
           </div>
         </article>
 
-        <!-- Project 2 -->
         <article class="project">
-          <div class="thumb" role="img" aria-label="Project preview">Health System</div>
+          <div class="thumb">CareBridge HIS</div>
           <div>
-            <h3>Web-Based Health Information System</h3>
+            <h3>Web-Based Health Information System (CareBridge)</h3>
             <p>
               Final year project — Developed a web application to manage patient records and appointments, 
               reducing manual errors and improving data handling efficiency.
             </p>
             <ul class="tags">
-              <li>PHP</li>
-              <li>MySQL</li>
-              <li>JavaScript</li>
-              <li>HTML/CSS</li>
+              <li>PHP</li><li>MySQL</li><li>JavaScript</li><li>HTML/CSS</li>
             </ul>
-            <button class="link" onclick="openModal('healthModal')">View Sample Form →</button>
+            <button class="link" onclick="openModal('healthModal')">View Sign-in Page →</button>
           </div>
         </article>
 
@@ -199,24 +191,20 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
   </section>
 
-  <!-- About -->
   <section id="about">
     <div class="wrap about">
       <div>
         <h2>About</h2>
         <p>
           I am a results-driven Computer Science graduate from Debre Markos University with practical 
-          cybersecurity training from INSA (Information Network Security Administration) and Qiyas-AAU 
-          (Addis Ababa University).
+          cybersecurity training from INSA and Qiyas-AAU (Addis Ababa University).
         </p>
         <p>
           My focus is on Ethical Hacking, SOC Analysis, Active Directory Security, Malware Analysis, 
-          threat hunting, and penetration testing. I enjoy solving real security problems and building 
-          tools that help protect systems and data.
+          threat hunting, and penetration testing.
         </p>
         <p>
-          I am currently seeking a cybersecurity role where I can apply my skills and continue growing 
-          in the field.
+          I am currently seeking a cybersecurity role where I can apply my skills and continue growing.
         </p>
       </div>
       <div class="skills">
@@ -244,7 +232,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
     <div class="wrap">
       <h2>Experience</h2>
@@ -253,10 +240,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
           <span class="when">Sep 2025 – Dec 2025</span>
           <div>
             <h3>System Administrator — Super Double T General Trading PLC</h3>
-            <p>
-              Configured and maintained network and server infrastructure for secure operations. 
-              Hardened systems and managed user access controls across Windows and Linux environments.
-            </p>
+            <p>Configured and maintained network/server infrastructure. Hardened systems and managed user access controls.</p>
           </div>
         </li>
         <li>
@@ -270,138 +254,97 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
           <span class="when">2026</span>
           <div>
             <h3>Cybersecurity Training — INSA & Qiyas-AAU</h3>
-            <p>
-              Intensive training in Network Security, SOC Monitoring, Incident Response, 
-              Penetration Testing, Vulnerability Assessment, and SIEM.
-            </p>
+            <p>Training in Network Security, SOC Monitoring, Incident Response, Penetration Testing, and SIEM.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- Certificates -->
   <section id="certificates">
     <div class="wrap">
       <h2>Certificates</h2>
       <div class="certs">
         <div class="cert-card">
           <h3>Programming Fundamentals</h3>
-          <p>Udacity • August 2024<br>5 Million Ethiopian Coders</p>
+          <p>Udacity • August 2024</p>
         </div>
         <div class="cert-card">
           <h3>Android Developer Fundamentals</h3>
-          <p>Udacity • August 2024<br>5 Million Ethiopian Coders</p>
+          <p>Udacity • August 2024</p>
         </div>
         <div class="cert-card">
           <h3>Data Analysis Fundamentals</h3>
-          <p>Udacity • October 2024<br>5 Million Ethiopian Coders</p>
+          <p>Udacity • October 2024</p>
         </div>
         <div class="cert-card">
           <h3>Cybersecurity & Digital Risk Management</h3>
-          <p>Qiyas-AAU (Addis Ababa University)<br>Project Training</p>
+          <p>Qiyas-AAU • Project Training</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <section id="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p>Interested in working together or have a role that fits my profile? Feel free to reach out.</p>
+      <p style="color:var(--muted);margin-bottom:8px">Feel free to reach out.</p>
       <div class="contact-grid">
         <a href="mailto:kabtamugetaw589@gmail.com" class="contact-item">
           <div class="icon email">✉️</div>
-          <div>
-            <strong>Email</strong>
-            <span>kabtamugetaw589@gmail.com</span>
-          </div>
+          <div><strong>Email</strong><span>kabtamugetaw589@gmail.com</span></div>
         </a>
         <a href="tel:+251942490342" class="contact-item">
           <div class="icon phone">📱</div>
-          <div>
-            <strong>Phone</strong>
-            <span>+251 942 490 342</span>
-          </div>
+          <div><strong>Phone</strong><span>+251 942 490 342</span></div>
         </a>
         <div class="contact-item">
           <div class="icon location">📍</div>
-          <div>
-            <strong>Location</strong>
-            <span>Addis Ababa, Ethiopia</span>
-          </div>
+          <div><strong>Location</strong><span>Addis Ababa, Ethiopia</span></div>
         </div>
         <a href="https://www.linkedin.com/in/kabtamu21" target="_blank" class="contact-item">
           <div class="icon linkedin">💼</div>
-          <div>
-            <strong>LinkedIn</strong>
-            <span>linkedin.com/in/kabtamu21</span>
-          </div>
+          <div><strong>LinkedIn</strong><span>linkedin.com/in/kabtamu21</span></div>
         </a>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="wrap">© <span id="yr"></span> Kabtamu Getaw Temtim. All rights reserved.</div>
 </footer>
 
-<!-- ==================== SAMPLE FORM 1: Security Monitoring ==================== -->
+<!-- Security Sample Form Modal -->
 <div class="modal-overlay" id="securityModal">
-  <div class="modal">
+  <div class="modal" style="max-width:480px;padding:28px">
     <button class="close" onclick="closeModal('securityModal')">&times;</button>
-    <h3>Security Incident Report</h3>
-    <p class="subtitle">Security Monitoring & Incident Response Platform — Sample Form</p>
-
-    <form onsubmit="event.preventDefault(); alert('Sample form submitted (demo only)'); closeModal('securityModal');">
-      <div class="form-group">
-        <label>Incident Title</label>
-        <input type="text" placeholder="e.g. Suspicious login attempt detected" required>
+    <h3 style="font-family:var(--serif);margin-bottom:6px">Security Incident Report</h3>
+    <p style="color:var(--muted);font-size:.95rem;margin-bottom:20px">Sample form from the Security Monitoring Platform</p>
+    <form onsubmit="event.preventDefault();alert('Demo only');closeModal('securityModal')">
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Incident Title</label>
+        <input type="text" placeholder="e.g. Suspicious login attempt" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)" required>
       </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Severity Level</label>
-          <select required>
-            <option value="">Select severity</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-            <option>Critical</option>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div>
+          <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Severity</label>
+          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)">
+            <option>Low</option><option>Medium</option><option>High</option><option>Critical</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Incident Type</label>
-          <select required>
-            <option value="">Select type</option>
-            <option>Malware</option>
-            <option>Unauthorized Access</option>
-            <option>Data Breach</option>
-            <option>Phishing</option>
-            <option>Network Anomaly</option>
+        <div>
+          <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Type</label>
+          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)">
+            <option>Malware</option><option>Unauthorized Access</option><option>Phishing</option>
           </select>
         </div>
       </div>
-
-      <div class="form-group">
-        <label>Affected System / IP</label>
-        <input type="text" placeholder="e.g. 192.168.1.45 or Web Server">
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Description</label>
+        <textarea placeholder="Describe the incident..." style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-height:80px"></textarea>
       </div>
-
-      <div class="form-group">
-        <label>Description</label>
-        <textarea placeholder="Describe the incident in detail..."></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Reported By</label>
-        <input type="text" placeholder="Your name or SOC Analyst">
-      </div>
-
-      <div class="form-actions">
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px">
         <button type="button" class="btn" onclick="closeModal('securityModal')">Cancel</button>
         <button type="submit" class="btn primary">Submit Incident</button>
       </div>
@@ -409,86 +352,89 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   </div>
 </div>
 
-<!-- ==================== SAMPLE FORM 2: Health Information System ==================== -->
+<!-- CareBridge HIS Sign-in Modal (Your design) -->
 <div class="modal-overlay" id="healthModal">
   <div class="modal">
     <button class="close" onclick="closeModal('healthModal')">&times;</button>
-    <h3>Patient Registration</h3>
-    <p class="subtitle">Web-Based Health Information System — Sample Form</p>
-
-    <form onsubmit="event.preventDefault(); alert('Sample form submitted (demo only)'); closeModal('healthModal');">
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" placeholder="Patient first name" required>
+    <div class="his-layout">
+      <aside class="his-side">
+        <div>
+          <div class="his-brand">
+            <svg viewBox="0 0 36 36" fill="none" width="36" height="36"><rect width="36" height="36" rx="9" fill="#7CC8D2"/><path d="M15 8h6v7h7v6h-7v7h-6v-7H8v-6h7z" fill="#0E3B43"/></svg>
+            CareBridge HIS
+          </div>
+          <h1>Patient records, where your care team needs them.</h1>
+          <p>Sign in to view patient charts, appointments, lab results and prescriptions.</p>
+          <ul class="his-checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" width="18" height="18"><path d="M5 12l4 4 10-10"/></svg>Every record access is logged</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" width="18" height="18"><path d="M5 12l4 4 10-10"/></svg>Data encrypted in transit and at rest</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" width="18" height="18"><path d="M5 12l4 4 10-10"/></svg>Sessions end after 15 minutes of inactivity</li>
+          </ul>
         </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" placeholder="Patient last name" required>
+        <small style="color:#7FA3A8">© CareBridge Health Systems</small>
+      </aside>
+      <main class="his-main">
+        <div class="his-card">
+          <h2>Sign in</h2>
+          <p class="sub">Use your hospital staff account.</p>
+          <form onsubmit="event.preventDefault();alert('Demo only — this is a sample sign-in page');closeModal('healthModal')">
+            <div class="his-field">
+              <label>Role</label>
+              <select>
+                <option>Doctor</option>
+                <option>Nurse</option>
+                <option>Pharmacist</option>
+                <option>Lab technician</option>
+                <option>Receptionist</option>
+                <option>Administrator</option>
+              </select>
+            </div>
+            <div class="his-field">
+              <label>Staff ID or work email</label>
+              <input type="text" placeholder="e.g. DR-10482">
+            </div>
+            <div class="his-field">
+              <label>Password</label>
+              <div class="his-pw">
+                <input type="password" id="hisPw" placeholder="Enter password">
+                <button type="button" class="his-toggle" onclick="toggleHisPw(this)">Show</button>
+              </div>
+            </div>
+            <div class="his-row">
+              <label><input type="checkbox"> Keep me signed in</label>
+              <a href="#">Forgot password?</a>
+            </div>
+            <button class="his-submit" type="submit">Sign in</button>
+          </form>
+          <p class="his-notice">Authorized staff only. Access to patient information is monitored and must follow hospital privacy policy.</p>
         </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Date of Birth</label>
-          <input type="date" required>
-        </div>
-        <div class="form-group">
-          <label>Gender</label>
-          <select required>
-            <option value="">Select</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+251 9XX XXX XXX">
-      </div>
-
-      <div class="form-group">
-        <label>Appointment Date</label>
-        <input type="date">
-      </div>
-
-      <div class="form-group">
-        <label>Reason for Visit</label>
-        <textarea placeholder="Describe symptoms or reason for appointment..."></textarea>
-      </div>
-
-      <div class="form-actions">
-        <button type="button" class="btn" onclick="closeModal('healthModal')">Cancel</button>
-        <button type="submit" class="btn primary">Register Patient</button>
-      </div>
-    </form>
+      </main>
+    </div>
   </div>
 </div>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-  function openModal(id) {
-    document.getElementById(id).classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Close modal when clicking outside
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click', e=>{
+    if(e.target===o){ o.classList.remove('active'); document.body.style.overflow=''; }
   });
+});
+function toggleHisPw(btn){
+  const input = document.getElementById('hisPw');
+  const show = input.type === 'password';
+  input.type = show ? 'text' : 'password';
+  btn.textContent = show ? 'Hide' : 'Show';
+}
 </script>
 </body>
 </html>
