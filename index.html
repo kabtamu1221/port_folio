@@ -5,121 +5,454 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kabtamu Getaw Temtim — Cybersecurity Specialist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F7F8F5; --ink:#1B2A2F; --muted:#5B6B70; --line:#D9DED8;
-  --accent:#1F6F78; --card:#FFFFFF;
-  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+:root {
+  --bg: #0B1220;
+  --bg-soft: #111827;
+  --card: #151F2E;
+  --ink: #F1F5F9;
+  --muted: #94A3B8;
+  --line: #1E293B;
+  --accent: #22D3EE;
+  --accent-2: #818CF8;
+  --accent-3: #34D399;
+  --pink: #F472B6;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{--bg:#121A1D;--ink:#EEF2EF;--muted:#98A8AC;--line:#26343A;--accent:#5CC0C9;--card:#182226}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.65;
+  font-size: 17px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
-a{color:inherit}
-.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
-nav{display:flex;justify-content:space-between;align-items:center;height:64px}
-nav .logo{font-family:var(--serif);font-weight:600;font-size:1.15rem;text-decoration:none}
-nav ul{display:flex;gap:24px;list-style:none;font-size:.95rem}
-nav ul a{text-decoration:none;color:var(--muted)}
-nav ul a:hover{color:var(--ink)}
-.hero{padding:96px 0 72px}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;max-width:16em;letter-spacing:-.02em}
-.hero p{margin-top:24px;max-width:38em;color:var(--muted);font-size:1.15rem}
-.btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid var(--ink);cursor:pointer;background:transparent;font-family:inherit}
-.btn.primary{background:var(--ink);color:var(--bg)}
-.btn:hover{border-color:var(--accent)}
-section{padding:72px 0;border-top:1px solid var(--line)}
-h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin-bottom:32px}
-.projects{display:grid;gap:24px}
-.project{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px}
-.thumb{aspect-ratio:4/3;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--line));display:flex;align-items:end;padding:14px;color:#fff;font-family:var(--serif);font-size:1.2rem}
-.project h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:8px}
-.project p{color:var(--muted);font-size:.98rem}
-.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
-.tags li{font-size:.82rem;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
-.project .link{display:inline-block;margin-top:16px;color:var(--accent);font-weight:500;text-decoration:none;cursor:pointer;background:none;border:none;font-size:.95rem;font-family:inherit}
-.project .link:hover{text-decoration:underline}
-.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
-.about p+p{margin-top:16px}
-.skills h3{font-size:1rem;margin-bottom:10px}
-.skills ul{list-style:none;margin-bottom:22px;color:var(--muted)}
-.skills li{padding:6px 0;border-bottom:1px solid var(--line)}
-.timeline{list-style:none}
-.timeline li{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
-.timeline .when{color:var(--muted);font-size:.92rem}
-.timeline h3{font-size:1.05rem}
-.timeline p{color:var(--muted);font-size:.96rem}
-.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
-.cert-card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
-.cert-card p{color:var(--muted);font-size:.95rem}
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(11, 18, 32, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 50;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+}
+nav .logo {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav ul { display: flex; gap: 26px; list-style: none; font-size: 0.95rem; }
+nav ul a { color: var(--muted); transition: color 0.2s; }
+nav ul a:hover { color: var(--accent); }
+
+/* Hero */
+.hero {
+  padding: 100px 0 80px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 6vw, 4.3rem);
+  line-height: 1.12;
+  max-width: 15em;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #F1F5F9 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero p {
+  margin-top: 24px;
+  max-width: 36em;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+.btns { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.btn.primary {
+  background: linear-gradient(135deg, #06B6D4, #6366F1);
+  color: white;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
+}
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
+}
+.btn.outline {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+.btn.outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Sections */
+section { padding: 80px 0; border-top: 1px solid var(--line); }
+h2 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: var(--ink);
+}
+
+/* Projects */
+.projects { display: grid; gap: 28px; }
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.project:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  transform: translateY(-4px);
+}
+.thumb {
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0E7490, #4F46E5 60%, #7C3AED);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.project h3 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+.project p { color: var(--muted); font-size: 1rem; }
+.tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+.tags li {
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+.project .link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--accent);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.project .link:hover { text-decoration: underline; }
+
+/* About */
+.about { display: grid; grid-template-columns: 1.45fr 1fr; gap: 48px; }
+.about p + p { margin-top: 16px; }
+.about p { color: var(--muted); }
+.skills h3 {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.skills ul { list-style: none; margin-bottom: 24px; color: var(--muted); }
+.skills li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Experience */
+.timeline { list-style: none; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 28px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.timeline .when { color: var(--accent); font-size: 0.92rem; font-weight: 500; }
+.timeline h3 { font-size: 1.08rem; margin-bottom: 4px; }
+.timeline p { color: var(--muted); font-size: 0.97rem; }
+
+/* Certificates */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.cert-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cert-card:hover {
+  border-color: var(--accent-2);
+  transform: translateY(-3px);
+}
+.cert-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.cert-card p { color: var(--muted); font-size: 0.93rem; }
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
-.contact-item{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;text-decoration:none;transition:all .25s ease}
-.contact-item:hover{border-color:var(--accent);transform:translateY(-3px)}
-.contact-item .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
-.contact-item .icon.email{background:#E8F5F5;color:#1F6F78}
-.contact-item .icon.phone{background:#EAF7EE;color:#2E7D32}
-.contact-item .icon.location{background:#FDF2E9;color:#D35400}
-.contact-item .icon.linkedin{background:#E8F0FE;color:#1A73E8}
-.contact-item strong{display:block;font-size:.95rem;margin-bottom:2px}
-.contact-item span{color:var(--muted);font-size:.9rem;word-break:break-all}
-@media (prefers-color-scheme:dark){
-  .contact-item .icon.email{background:#1A3336;color:#5CC0C9}
-  .contact-item .icon.phone{background:#1A3322;color:#81C784}
-  .contact-item .icon.location{background:#33261A;color:#FFB74D}
-  .contact-item .icon.linkedin{background:#1A2733;color:#64B5F6}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
 }
-footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: all 0.25s ease;
+}
+.contact-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(34, 211, 238, 0.08);
+}
+.contact-item .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+.contact-item .icon.email { background: rgba(34, 211, 238, 0.15); }
+.contact-item .icon.phone { background: rgba(52, 211, 153, 0.15); }
+.contact-item .icon.location { background: rgba(251, 146, 60, 0.15); }
+.contact-item .icon.linkedin { background: rgba(129, 140, 248, 0.15); }
+.contact-item strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+.contact-item span { color: var(--muted); font-size: 0.88rem; word-break: break-all; }
+
+footer {
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 
 /* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;padding:16px}
-.modal-overlay.active{display:flex}
-.modal{background:var(--card);border-radius:12px;width:100%;max-width:980px;max-height:92vh;overflow:auto;position:relative;border:1px solid var(--line)}
-.modal .close{position:absolute;top:12px;right:16px;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--muted);z-index:5}
-.modal .close:hover{color:var(--ink)}
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: var(--card);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 92vh;
+  overflow: auto;
+  position: relative;
+  border: 1px solid var(--line);
+}
+.modal .close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--muted);
+  z-index: 5;
+}
+.modal .close:hover { color: var(--ink); }
 
-/* ===== CareBridge HIS Login Styles ===== */
-.his-layout{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
-.his-side{background:#0E3B43;color:#E6F1F2;padding:40px;display:flex;flex-direction:column;justify-content:space-between}
-.his-brand{display:flex;align-items:center;gap:12px;font-size:1.2rem;font-weight:600;margin-bottom:24px}
-.his-side h1{font-size:1.7rem;line-height:1.25;font-weight:600;margin-bottom:12px}
-.his-side p{color:#A9C7CB;font-size:.95rem}
-.his-checks{margin-top:24px;list-style:none;display:grid;gap:10px}
-.his-checks li{display:flex;gap:10px;align-items:flex-start;color:#CFE3E5;font-size:.9rem}
-.his-checks svg{flex:none;width:18px;height:18px;margin-top:2px;stroke:#7CC8D2}
-.his-main{display:flex;align-items:center;justify-content:center;padding:32px 28px;background:#F3F6F6}
-.his-card{width:100%;max-width:380px;background:#fff;border:1px solid #D3DDDF;border-radius:12px;padding:28px}
-.his-card h2{font-size:1.4rem;margin-bottom:4px;color:#14262B}
-.his-card .sub{color:#5D7076;margin-bottom:20px;font-size:.92rem}
-.his-field{margin-bottom:16px}
-.his-field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px;color:#14262B}
-.his-field input,.his-field select{width:100%;padding:11px 13px;border:1px solid #9FB0B4;border-radius:8px;font:inherit;background:#fff;color:#14262B}
-.his-field input:focus,.his-field select:focus{border-color:#0F7C8A;outline:3px solid #BFE4E9;outline-offset:0}
-.his-pw{position:relative}
-.his-pw input{padding-right:60px}
-.his-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:#0F7C8A;font:inherit;font-weight:600;font-size:.85rem;padding:8px;cursor:pointer}
-.his-row{display:flex;justify-content:space-between;align-items:center;margin:4px 0 18px;font-size:.9rem;gap:10px;flex-wrap:wrap;color:#14262B}
-.his-row label{display:flex;align-items:center;gap:8px;font-weight:400;margin:0}
-.his-row input{width:auto}
-.his-row a{color:#0F7C8A;font-weight:500;text-decoration:none}
-.his-submit{width:100%;padding:12px;border:0;border-radius:8px;background:#0E3B43;color:#fff;font:inherit;font-weight:600;cursor:pointer}
-.his-submit:hover{background:#155560}
-.his-notice{margin-top:18px;padding-top:16px;border-top:1px solid #D3DDDF;font-size:.8rem;color:#5D7076}
+/* CareBridge HIS */
+.his-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+.his-side {
+  background: linear-gradient(160deg, #0E3B43, #134E4A);
+  color: #E6F1F2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.his-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.his-side h1 { font-size: 1.65rem; line-height: 1.25; font-weight: 600; margin-bottom: 12px; }
+.his-side p { color: #A9C7CB; font-size: 0.95rem; }
+.his-checks { margin-top: 24px; list-style: none; display: grid; gap: 10px; }
+.his-checks li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #CFE3E5;
+  font-size: 0.9rem;
+}
+.his-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  background: #0F172A;
+}
+.his-card {
+  width: 100%;
+  max-width: 380px;
+  background: #1E293B;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 28px;
+}
+.his-card h2 { font-size: 1.4rem; margin-bottom: 4px; color: #F1F5F9; }
+.his-card .sub { color: #94A3B8; margin-bottom: 20px; font-size: 0.92rem; }
+.his-field { margin-bottom: 16px; }
+.his-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #E2E8F0;
+}
+.his-field input,
+.his-field select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  font: inherit;
+  background: #0F172A;
+  color: #F1F5F9;
+}
+.his-field input:focus,
+.his-field select:focus {
+  border-color: #22D3EE;
+  outline: 3px solid rgba(34, 211, 238, 0.2);
+  outline-offset: 0;
+}
+.his-pw { position: relative; }
+.his-pw input { padding-right: 60px; }
+.his-toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  color: #22D3EE;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px;
+  cursor: pointer;
+}
+.his-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 18px;
+  font-size: 0.9rem;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #CBD5E1;
+}
+.his-row label { display: flex; align-items: center; gap: 8px; font-weight: 400; margin: 0; }
+.his-row input { width: auto; }
+.his-row a { color: #22D3EE; font-weight: 500; }
+.his-submit {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0E7490, #4F46E5);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.his-submit:hover { opacity: 0.95; }
+.his-notice {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
 
-@media (max-width:800px){
-  .his-layout{grid-template-columns:1fr}
-  .his-side{padding:24px}
-  .his-side h1,.his-checks{display:none}
-  .project,.about{grid-template-columns:1fr}
-  .timeline li{grid-template-columns:1fr;gap:4px}
-  nav ul{gap:12px;font-size:.88rem}
+@media (max-width: 800px) {
+  .his-layout { grid-template-columns: 1fr; }
+  .his-side { padding: 24px; }
+  .his-side h1, .his-checks { display: none; }
+  .project, .about { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; gap: 6px; }
+  nav ul { gap: 14px; font-size: 0.88rem; }
+  .hero { padding: 70px 0 50px; }
 }
 </style>
 </head>
@@ -148,7 +481,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </p>
     <div class="btns">
       <a class="btn primary" href="#work">View my work</a>
-      <a class="btn" href="CV1.pdf" download>Download CV</a>
+      <a class="btn outline" href="CV1.pdf" download>Download CV</a>
     </div>
   </div>
 
@@ -156,7 +489,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     <div class="wrap">
       <h2>Selected work</h2>
       <div class="projects">
-
         <article class="project">
           <div class="thumb">Security Platform</div>
           <div>
@@ -186,7 +518,6 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
             <button class="link" onclick="openModal('healthModal')">View Sign-in Page →</button>
           </div>
         </article>
-
       </div>
     </div>
   </section>
@@ -288,7 +619,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <section id="contact">
     <div class="wrap">
       <h2>Contact</h2>
-      <p style="color:var(--muted);margin-bottom:8px">Feel free to reach out.</p>
+      <p style="color:var(--muted);margin-bottom:4px">Feel free to reach out.</p>
       <div class="contact-grid">
         <a href="mailto:kabtamugetaw589@gmail.com" class="contact-item">
           <div class="icon email">✉️</div>
@@ -315,7 +646,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
   <div class="wrap">© <span id="yr"></span> Kabtamu Getaw Temtim. All rights reserved.</div>
 </footer>
 
-<!-- Security Sample Form Modal -->
+<!-- Security Form Modal -->
 <div class="modal-overlay" id="securityModal">
   <div class="modal" style="max-width:480px;padding:28px">
     <button class="close" onclick="closeModal('securityModal')">&times;</button>
@@ -324,35 +655,35 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     <form onsubmit="event.preventDefault();alert('Demo only');closeModal('securityModal')">
       <div style="margin-bottom:14px">
         <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Incident Title</label>
-        <input type="text" placeholder="e.g. Suspicious login attempt" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)" required>
+        <input type="text" placeholder="e.g. Suspicious login attempt" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)" required>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
         <div>
           <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Severity</label>
-          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)">
+          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)">
             <option>Low</option><option>Medium</option><option>High</option><option>Critical</option>
           </select>
         </div>
         <div>
           <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Type</label>
-          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)">
+          <select style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)">
             <option>Malware</option><option>Unauthorized Access</option><option>Phishing</option>
           </select>
         </div>
       </div>
       <div style="margin-bottom:14px">
         <label style="display:block;font-weight:600;font-size:.9rem;margin-bottom:5px">Description</label>
-        <textarea placeholder="Describe the incident..." style="width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-height:80px"></textarea>
+        <textarea placeholder="Describe the incident..." style="width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-height:80px"></textarea>
       </div>
       <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px">
-        <button type="button" class="btn" onclick="closeModal('securityModal')">Cancel</button>
+        <button type="button" class="btn outline" onclick="closeModal('securityModal')">Cancel</button>
         <button type="submit" class="btn primary">Submit Incident</button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- CareBridge HIS Sign-in Modal (Your design) -->
+<!-- CareBridge HIS Modal -->
 <div class="modal-overlay" id="healthModal">
   <div class="modal">
     <button class="close" onclick="closeModal('healthModal')">&times;</button>
@@ -377,7 +708,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
         <div class="his-card">
           <h2>Sign in</h2>
           <p class="sub">Use your hospital staff account.</p>
-          <form onsubmit="event.preventDefault();alert('Demo only — this is a sample sign-in page');closeModal('healthModal')">
+          <form onsubmit="event.preventDefault();alert('Demo only');closeModal('healthModal')">
             <div class="his-field">
               <label>Role</label>
               <select>
@@ -406,7 +737,7 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
             </div>
             <button class="his-submit" type="submit">Sign in</button>
           </form>
-          <p class="his-notice">Authorized staff only. Access to patient information is monitored and must follow hospital privacy policy.</p>
+          <p class="his-notice">Authorized staff only. Access is monitored and must follow privacy policy.</p>
         </div>
       </main>
     </div>
@@ -415,19 +746,10 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
-
-function openModal(id){
-  document.getElementById(id).classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(id){
-  document.getElementById(id).classList.remove('active');
-  document.body.style.overflow = '';
-}
+function openModal(id){ document.getElementById(id).classList.add('active'); document.body.style.overflow='hidden'; }
+function closeModal(id){ document.getElementById(id).classList.remove('active'); document.body.style.overflow=''; }
 document.querySelectorAll('.modal-overlay').forEach(o=>{
-  o.addEventListener('click', e=>{
-    if(e.target===o){ o.classList.remove('active'); document.body.style.overflow=''; }
-  });
+  o.addEventListener('click', e=>{ if(e.target===o){ o.classList.remove('active'); document.body.style.overflow=''; }});
 });
 function toggleHisPw(btn){
   const input = document.getElementById('hisPw');
