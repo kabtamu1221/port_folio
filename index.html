@@ -109,6 +109,7 @@
     }
     .section-desc { color: #a8a29e; margin-bottom: 1.8rem; font-size: 1.05rem; }
 
+    /* About */
     #about {
       background: #141211;
       border-radius: 20px;
@@ -121,8 +122,39 @@
       color: #d6d3d1;
       font-size: 1.08rem;
       line-height: 1.85;
+      margin-bottom: 1.8rem;
+    }
+    .experience-box {
+      background: #1c1917;
+      border-left: 4px solid #22c55e;
+      padding: 1.4rem 1.6rem;
+      border-radius: 0 12px 12px 0;
+      margin-top: 1.5rem;
+    }
+    .experience-box h4 {
+      color: #86efac;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .experience-box .role {
+      color: #f5f5f4;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .experience-box .period {
+      color: #a8a29e;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+    .experience-box ul {
+      padding-left: 1.2rem;
+      color: #d6d3d1;
+    }
+    .experience-box li {
+      margin-bottom: 0.4rem;
     }
 
+    /* Skills */
     .skills-category { margin-bottom: 2rem; }
     .skills-category h3 {
       color: #67e8f9;
@@ -151,6 +183,7 @@
       transform: translateY(-2px);
     }
 
+    /* Projects */
     .project-card {
       background: #1c1917;
       border-radius: 14px;
@@ -179,32 +212,7 @@
       font-size: 0.9rem;
     }
 
-    .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .cert-card {
-      background: #1c1917;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #44403c;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
-    .cert-card:hover {
-      transform: translateY(-5px);
-      border-color: #22c55e;
-      box-shadow: 0 12px 28px rgba(34, 197, 94, 0.15);
-    }
-    .cert-card img {
-      width: 100%; height: auto; display: block; border-bottom: 1px solid #333;
-    }
-    .cert-info { padding: 1.1rem 1.3rem; }
-    .cert-info h3 { color: #f5f5f4; font-size: 1.05rem; margin-bottom: 0.25rem; }
-    .cert-info p { color: #a8a29e; font-size: 0.9rem; }
-
-    /* CV Download only */
+    /* CV Download */
     .cv-download-box {
       background: #1c1917;
       border-radius: 16px;
@@ -224,6 +232,7 @@
       font-size: 1.05rem;
     }
 
+    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -278,7 +287,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#resume">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -300,19 +308,36 @@
     </div>
   </header>
 
-  <!-- About -->
+  <!-- About (Detailed + Experience) -->
   <section id="about">
     <h2 class="section-title">About Me</h2>
-    <p class="section-desc">Professional Summary</p>
+    <p class="section-desc">Professional Profile</p>
+
     <p class="about-text">
-      Results-driven Computer Science graduate with hands-on cybersecurity training from 
-      <strong>INSA</strong> (Information Network Security Administration) and 
-      <strong>Qiyas-AAU</strong> (Addis Ababa University). Specializing in Ethical Hacking, 
-      SOC Analysis, Active Directory Security, and Malware Analysis. 
-      Experienced in software development and security projects, with practical skills in 
-      threat hunting, log analysis, and penetration testing. 
-      Seeking a cybersecurity role to help protect digital assets and strengthen organizational security.
+      I am a results-driven Computer Science graduate from Debre Markos University with strong 
+      hands-on cybersecurity training from <strong>INSA</strong> (Information Network Security Administration) 
+      and <strong>Qiyas-AAU</strong> (Addis Ababa University). My focus areas include Ethical Hacking, 
+      SOC Analysis, Active Directory Security, Malware Analysis, threat hunting, and penetration testing.
     </p>
+
+    <p class="about-text">
+      I have practical experience in both software development and cybersecurity projects. 
+      I am skilled in using tools such as Kali Linux, Nmap, Burp Suite, Wireshark, and Wazuh, 
+      along with programming languages like Python, Bash, Java, and JavaScript. 
+      I am passionate about protecting digital systems and continuously improving my skills 
+      to contribute to organizational security.
+    </p>
+
+    <!-- Experience from CV -->
+    <div class="experience-box">
+      <h4>Work Experience</h4>
+      <div class="role">System Administrator</div>
+      <div class="period">Super Double T General Trading PLC • September 17, 2025 – December 27, 2025</div>
+      <ul>
+        <li>Configured and maintained network and server infrastructure for secure and reliable operations</li>
+        <li>Hardened systems and managed user access controls across Windows and Linux environments</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Skills -->
@@ -394,39 +419,7 @@
     </div>
   </section>
 
-  <!-- Certificates -->
-  <section id="certificates">
-    <h2 class="section-title">Certificates</h2>
-    <p class="section-desc">Verified certificates</p>
-
-    <div class="certificates-grid">
-      <div class="cert-card">
-        <img src="programming fundamental _page-0001.jpg" alt="Programming Fundamentals">
-        <div class="cert-info">
-          <h3>Programming Fundamentals</h3>
-          <p>Udacity • 2024</p>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <img src="android1.jpg" alt="Android Developer Fundamentals">
-        <div class="cert-info">
-          <h3>Android Developer Fundamentals</h3>
-          <p>Udacity • 2024</p>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <img src="data analaysis_page-0001.jpg" alt="Data Analysis Fundamentals">
-        <div class="cert-info">
-          <h3>Data Analysis Fundamentals</h3>
-          <p>Udacity • 2024</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CV - Download only (no image display) -->
+  <!-- CV Download Only -->
   <section id="resume">
     <h2 class="section-title">Curriculum Vitae</h2>
     <p class="section-desc">Download my latest CV</p>
