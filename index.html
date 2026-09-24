@@ -1,366 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kabtamu Getaw Temtim | Portfolio</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #0c0a09;
-      color: #f5f5f4;
-      line-height: 1.7;
-    }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(12, 10, 9, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #292524;
-      z-index: 1000;
-      padding: 1rem 1.5rem;
-    }
-    .nav-container {
-      max-width: 1050px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo {
-      font-size: 1.2rem; font-weight: 700;
-      background: linear-gradient(to right, #86efac, #67e8f9, #c4b5fd);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a {
-      color: #d6d3d1; text-decoration: none; font-size: 0.95rem; font-weight: 500;
-      transition: color 0.25s; cursor: pointer;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #86efac; }
-
-    header {
-      background: linear-gradient(135deg, #4c1d95 0%, #1e40af 50%, #0f766e 100%);
-      padding: 8rem 1.5rem 4rem;
-      text-align: center;
-    }
-    .profile-pic {
-      width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
-      border: 4px solid #22c55e;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      margin-bottom: 1.2rem;
-    }
-    header h1 {
-      font-size: 2.5rem; font-weight: 800; margin-bottom: 0.4rem;
-      background: linear-gradient(to right, #c4b5fd, #67e8f9, #86efac);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    header .subtitle { font-size: 1.15rem; color: #e0e7ff; margin-bottom: 0.5rem; }
-    header .tagline {
-      font-size: 1rem; color: #c7d2fe; max-width: 580px; margin: 0 auto 1.8rem;
-    }
-
-    .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
-    .btn {
-      display: inline-block; padding: 0.75rem 1.7rem; border-radius: 50px;
-      font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #16a34a, #0ea5e9); color: white;
-    }
-    .btn-primary:hover { transform: translateY(-3px); }
-    .btn-outline {
-      background: transparent; border: 2px solid #a78bfa; color: #c4b5fd;
-    }
-    .btn-outline:hover {
-      background: #7c3aed; border-color: #7c3aed; color: white; transform: translateY(-3px);
-    }
-
-    /* Content sections */
-    .page-section {
-      display: none;                 /* HIDDEN by default */
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem 4rem;
-    }
-    .page-section.active {
-      display: block;                /* Only show when active */
-    }
-
-    .section-title {
-      font-size: 1.8rem; color: #86efac; margin-bottom: 1.2rem;
-    }
-
-    /* About */
-    .about-text {
-      color: #e7e5e4; font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.3rem;
-    }
-    .experience-box {
-      background: #1c1917;
-      border-left: 5px solid #22c55e;
-      padding: 1.4rem 1.5rem;
-      border-radius: 0 10px 10px 0;
-      margin-top: 1.5rem;
-    }
-    .experience-box h4 { color: #86efac; font-size: 1.15rem; margin-bottom: 0.4rem; }
-    .experience-box .role { color: #ffffff; font-weight: 600; font-size: 1.05rem; }
-    .experience-box .period { color: #a8a29e; font-size: 0.95rem; margin-bottom: 0.8rem; }
-    .experience-box ul { padding-left: 1.3rem; color: #d6d3d1; }
-    .experience-box li { margin-bottom: 0.4rem; }
-
-    /* Skills */
-    .skills-category { margin-bottom: 2rem; }
-    .skills-category h3 { color: #67e8f9; font-size: 1.15rem; margin-bottom: 0.8rem; }
-    .skills { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-    .skill {
-      background: #1c1917; color: #a7f3d0; padding: 0.5rem 1.2rem;
-      border-radius: 50px; font-size: 0.93rem; border: 1px solid #44403c;
-    }
-
-    /* Projects */
-    .project-card {
-      background: #1c1917; border-radius: 14px; padding: 1.6rem;
-      margin-bottom: 1.3rem; border: 1px solid #44403c;
-    }
-    .project-card h3 { color: #f5f5f4; font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .project-card p { color: #a8a29e; margin-bottom: 0.6rem; }
-    .project-tech { color: #67e8f9; font-size: 0.9rem; }
-
-    /* CV */
-    .cv-box {
-      background: #1c1917; border-radius: 16px; border: 1px solid #44403c;
-      padding: 2.5rem 2rem; text-align: center;
-    }
-    .cv-box h3 { color: #f5f5f4; font-size: 1.4rem; margin-bottom: 0.7rem; }
-    .cv-box p { color: #a8a29e; margin-bottom: 1.6rem; }
-
-    /* Contact */
-    .contact-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem;
-    }
-    .contact-card {
-      background: #1c1917; border-radius: 14px; padding: 1.5rem;
-      border: 1px solid #44403c; text-align: center;
-    }
-    .contact-card .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
-    .contact-card a { color: #86efac; text-decoration: none; font-weight: 600; word-break: break-all; }
-    .contact-card p { color: #a8a29e; font-size: 0.88rem; margin-top: 0.3rem; }
-
-    footer {
-      text-align: center; padding: 2rem; color: #78716c;
-      border-top: 1px solid #292524; font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      header h1 { font-size: 2rem; }
-      .profile-pic { width: 110px; height: 110px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alex Morgan — Product Designer & Developer</title>
+<meta name="description" content="Portfolio of Alex Morgan, product designer and front-end developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F8F5; --ink:#1B2A2F; --muted:#5B6B70; --line:#D9DED8;
+  --accent:#1F6F78; --card:#FFFFFF;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121A1D;--ink:#EEF2EF;--muted:#98A8AC;--line:#26343A;--accent:#5CC0C9;--card:#182226}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+nav .logo{font-family:var(--serif);font-weight:600;font-size:1.15rem;text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;font-size:.95rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+.hero{padding:96px 0 72px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;max-width:15em;letter-spacing:-.02em}
+.hero p{margin-top:24px;max-width:38em;color:var(--muted);font-size:1.15rem}
+.btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin-bottom:32px}
+.projects{display:grid;gap:24px}
+.project{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px}
+.thumb{aspect-ratio:4/3;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--line));display:flex;align-items:end;padding:14px;color:#fff;font-family:var(--serif);font-size:1.2rem}
+.project h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:8px}
+.project p{color:var(--muted);font-size:.98rem}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tags li{font-size:.82rem;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.project a.link{display:inline-block;margin-top:16px;color:var(--accent);font-weight:500;text-decoration:none}
+.project a.link:hover{text-decoration:underline}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p+p{margin-top:16px}
+.skills h3{font-size:1rem;margin-bottom:10px}
+.skills ul{list-style:none;margin-bottom:22px;color:var(--muted)}
+.skills li{padding:6px 0;border-bottom:1px solid var(--line)}
+.timeline{list-style:none}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline .when{color:var(--muted);font-size:.92rem}
+.timeline h3{font-size:1.05rem}
+.timeline p{color:var(--muted);font-size:.96rem}
+.contact{text-align:left}
+.contact p{max-width:34em;color:var(--muted);margin-bottom:24px}
+.contact .mail{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.4rem);color:var(--accent);text-decoration:none;word-break:break-all}
+.social{margin-top:28px;display:flex;gap:20px;flex-wrap:wrap}
+.social a{color:var(--muted);text-decoration:none}
+.social a:hover{color:var(--ink);text-decoration:underline}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (max-width:720px){
+  nav ul{gap:14px;font-size:.88rem}
+  .project,.about{grid-template-columns:1fr}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+  .hero{padding:64px 0 48px}
+}
+</style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-container">
-      <div class="logo">Kabtamu | Cybersecurity</div>
-      <ul class="nav-links">
-        <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
-        <li><a href="#" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#" class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#" class="nav-link" data-section="resume">CV</a></li>
-        <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HOME (Hero) - visible by default -->
-  <section id="home" class="page-section active">
-    <header style="padding-top: 0; background: none;">
-      <img src="cv-kabtamu-1.jpg" alt="Kabtamu Getaw Temtim" class="profile-pic">
-      <h1>Kabtamu Getaw Temtim</h1>
-      <p class="subtitle">Computer Science Graduate | Cybersecurity Specialist</p>
-      <p class="tagline">
-        Ethical Hacking • SOC Analysis • Penetration Testing • Incident Response
-      </p>
-      <div class="btn-group">
-        <a href="#" class="btn btn-primary nav-link" data-section="about">About Me</a>
-        <a href="#" class="btn btn-outline nav-link" data-section="resume">Download CV</a>
-        <a href="#" class="btn btn-outline nav-link" data-section="contact">Contact</a>
-      </div>
-    </header>
-  </section>
-
-  <!-- ABOUT - hidden until clicked -->
-  <section id="about" class="page-section">
-    <h2 class="section-title">About Me</h2>
-
-    <p class="about-text">
-      I am a results-driven Computer Science graduate from Debre Markos University with hands-on 
-      cybersecurity training from <strong>INSA</strong> (Information Network Security Administration) 
-      and <strong>Qiyas-AAU</strong> (Addis Ababa University). I specialize in Ethical Hacking, 
-      SOC Analysis, Active Directory Security, Malware Analysis, threat hunting, and penetration testing.
-    </p>
-
-    <p class="about-text">
-      I have practical experience in both software development and cybersecurity. 
-      I work with tools such as Kali Linux, Nmap, Burp Suite, Wireshark, and Wazuh, 
-      and I am skilled in Python, Bash, Java, and JavaScript. 
-      I am passionate about protecting digital systems and continuously improving my skills 
-      to contribute to organizational security.
-    </p>
-
-    <div class="experience-box">
-      <h4>Work Experience</h4>
-      <div class="role">System Administrator</div>
-      <div class="period">Super Double T General Trading PLC • September 17, 2025 – December 27, 2025</div>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">Alex Morgan</a>
       <ul>
-        <li>Configured and maintained network and server infrastructure for secure and reliable operations</li>
-        <li>Hardened systems and managed user access controls across Windows and Linux environments</li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>I design and build clear, useful software for growing teams.</h1>
+    <p>I'm Alex, a product designer and front-end developer with 6 years of experience in fintech and health. I turn complex workflows into interfaces people understand on the first try.</p>
+    <div class="btns">
+      <a class="btn primary" href="#work">View my work</a>
+      <a class="btn" href="resume.pdf" download>Download résumé</a>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+      <div class="projects">
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project preview">Ledgerly</div>
+          <div>
+            <h3>Ledgerly: invoicing for freelancers</h3>
+            <p>Redesigned the invoice flow, cutting the time to send a first invoice from 9 minutes to 3. Led research, design and the React front end.</p>
+            <ul class="tags"><li>Product design</li><li>React</li><li>User research</li></ul>
+            <a class="link" href="#">Read the case study</a>
+          </div>
+        </article>
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project preview">CareTrack</div>
+          <div>
+            <h3>CareTrack: patient scheduling app</h3>
+            <p>Built a scheduling dashboard used by 40 clinics, reducing missed appointments by 22% through reminders and simpler rebooking.</p>
+            <ul class="tags"><li>UX design</li><li>TypeScript</li><li>Accessibility</li></ul>
+            <a class="link" href="#">Read the case study</a>
+          </div>
+        </article>
+        <article class="project">
+          <div class="thumb" role="img" aria-label="Project preview">Atlas UI</div>
+          <div>
+            <h3>Atlas UI: design system</h3>
+            <p>Created a component library of 60+ accessible components, shared across four product teams.</p>
+            <ul class="tags"><li>Design systems</li><li>Storybook</li><li>CSS</li></ul>
+            <a class="link" href="#">View on GitHub</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="page-section">
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-category">
-      <h3>Frontend</h3>
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About</h2>
+        <p>I work where design and engineering meet. I start with the person using the product, test ideas early, and ship them myself when needed.</p>
+        <p>Outside of work I mentor new designers and write about accessible design. Currently open to senior product design roles and select freelance projects.</p>
+      </div>
       <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">React</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h3>Backend</h3>
-      <div class="skills">
-        <span class="skill">Python</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">Java</span>
-        <span class="skill">Golang</span>
-        <span class="skill">Bash</span>
-        <span class="skill">REST APIs</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h3>Cybersecurity</h3>
-      <div class="skills">
-        <span class="skill">Penetration Testing</span>
-        <span class="skill">SOC Analysis</span>
-        <span class="skill">Incident Response</span>
-        <span class="skill">Threat Hunting</span>
-        <span class="skill">Vulnerability Assessment</span>
-        <span class="skill">Network Security</span>
-        <span class="skill">Active Directory Security</span>
-        <span class="skill">Malware Analysis</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h3>Tools & Platforms</h3>
-      <div class="skills">
-        <span class="skill">Kali Linux</span>
-        <span class="skill">Nmap</span>
-        <span class="skill">Burp Suite</span>
-        <span class="skill">Wireshark</span>
-        <span class="skill">Wazuh / SIEM</span>
-        <span class="skill">Git & GitHub</span>
-        <span class="skill">Docker</span>
+        <h3>Design</h3>
+        <ul><li>Figma, prototyping</li><li>User research</li><li>Design systems</li></ul>
+        <h3>Development</h3>
+        <ul><li>HTML, CSS, JavaScript</li><li>React, TypeScript</li><li>Accessibility (WCAG 2.2)</li></ul>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="page-section">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="project-card">
-      <h3>Security Monitoring & Incident Response Platform</h3>
-      <p>
-        Developed a cybersecurity platform with a Python backend and React dashboard 
-        for security event collection, real-time threat detection, monitoring, and incident response.
-      </p>
-      <p class="project-tech">Tech: Python • React • Wazuh • Wireshark • SIEM</p>
-    </div>
-
-    <div class="project-card">
-      <h3>Web-Based Health Information System</h3>
-      <p>
-        Final year project — Built a web application to manage patient records and appointments, 
-        reducing manual errors and improving data handling.
-      </p>
-      <p class="project-tech">Tech: PHP • MySQL • HTML • CSS • JavaScript</p>
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li><span class="when">2023 – Present</span><div><h3>Senior Product Designer, Northwind</h3><p>Lead design for the payments team of 12. Introduced a shared design system.</p></div></li>
+        <li><span class="when">2020 – 2023</span><div><h3>Product Designer, Brightside Health</h3><p>Designed patient-facing web and mobile experiences used by 200k people.</p></div></li>
+        <li><span class="when">2018 – 2020</span><div><h3>Front-end Developer, Pixel &amp; Co.</h3><p>Built websites and web apps for 25+ small businesses.</p></div></li>
+      </ol>
     </div>
   </section>
 
-  <!-- CV -->
-  <section id="resume" class="page-section">
-    <h2 class="section-title">Curriculum Vitae</h2>
-    <div class="cv-box">
-      <h3>Kabtamu Getaw Temtim — CV</h3>
-      <p>Click the button below to download my complete Curriculum Vitae (PDF)</p>
-      <a href="CV1.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="page-section">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="icon">✉️</div>
-        <a href="mailto:kabtamugetaw589@gmail.com">kabtamugetaw589@gmail.com</a>
-        <p>Email</p>
-      </div>
-      <div class="contact-card">
-        <div class="icon">📱</div>
-        <a href="tel:+251942490342">+251 942 490 342</a>
-        <p>Phone</p>
-      </div>
-      <div class="contact-card">
-        <div class="icon">📍</div>
-        <span style="color:#86efac; font-weight:600;">Addis Ababa, Ethiopia</span>
-        <p>Location</p>
-      </div>
-      <div class="contact-card">
-        <div class="icon">💼</div>
-        <a href="https://www.linkedin.com/in/kabtamu21" target="_blank">linkedin.com/in/kabtamu21</a>
-        <p>LinkedIn</p>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Have a project or role in mind? I reply within two working days.</p>
+      <a class="mail" href="mailto:hello@alexmorgan.com">hello@alexmorgan.com</a>
+      <div class="social">
+        <a href="https://linkedin.com/in/yourname">LinkedIn</a>
+        <a href="https://github.com/yourname">GitHub</a>
+        <a href="https://dribbble.com/yourname">Dribbble</a>
       </div>
     </div>
   </section>
+</main>
 
-  <footer>
-    © 2026 Kabtamu Getaw Temtim • Professional Portfolio
-  </footer>
-
-  <script>
-    // Show only the selected section
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.page-section');
-
-    links.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Remove active from all links
-        links.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-
-        // Hide all sections
-        sections.forEach(sec => sec.classList.remove('active'));
-
-        // Show the selected section
-        const target = this.getAttribute('data-section');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-  </script>
-
+<footer>
+  <div class="wrap">© <span id="yr"></span> Alex Morgan. All rights reserved.</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
