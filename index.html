@@ -5,16 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kabtamu Getaw Temtim | Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background: #0c0a09;
@@ -22,379 +14,146 @@
       line-height: 1.7;
     }
 
-    /* Navigation */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      position: fixed; top: 0; left: 0; right: 0;
       background: rgba(12, 10, 9, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #292524;
       z-index: 1000;
       padding: 1rem 1.5rem;
     }
-
     .nav-container {
-      max-width: 1050px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 1050px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
     .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.2rem; font-weight: 700;
       background: linear-gradient(to right, #86efac, #67e8f9, #c4b5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
     .nav-links a {
-      color: #d6d3d1;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.25s;
+      color: #d6d3d1; text-decoration: none; font-size: 0.95rem; font-weight: 500;
+      transition: color 0.25s; cursor: pointer;
     }
+    .nav-links a:hover, .nav-links a.active { color: #86efac; }
 
-    .nav-links a:hover {
-      color: #86efac;
-    }
-
-    /* Hero */
     header {
       background: linear-gradient(135deg, #4c1d95 0%, #1e40af 50%, #0f766e 100%);
       padding: 8rem 1.5rem 4rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
     .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
       border: 4px solid #22c55e;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-      margin-bottom: 1.3rem;
-      position: relative;
-      z-index: 2;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      margin-bottom: 1.2rem;
     }
-
     header h1 {
-      font-size: 2.6rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
+      font-size: 2.5rem; font-weight: 800; margin-bottom: 0.4rem;
       background: linear-gradient(to right, #c4b5fd, #67e8f9, #86efac);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    header .subtitle {
-      font-size: 1.15rem;
-      color: #e0e7ff;
-      margin-bottom: 0.6rem;
-    }
-
+    header .subtitle { font-size: 1.15rem; color: #e0e7ff; margin-bottom: 0.5rem; }
     header .tagline {
-      font-size: 1rem;
-      color: #c7d2fe;
-      max-width: 600px;
-      margin: 0 auto 2rem;
+      font-size: 1rem; color: #c7d2fe; max-width: 580px; margin: 0 auto 1.8rem;
     }
 
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-    }
-
+    .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
     .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
+      display: inline-block; padding: 0.75rem 1.7rem; border-radius: 50px;
+      font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem;
     }
-
     .btn-primary {
-      background: linear-gradient(135deg, #16a34a, #0ea5e9);
-      color: white;
-      box-shadow: 0 4px 15px rgba(22, 163, 74, 0.35);
+      background: linear-gradient(135deg, #16a34a, #0ea5e9); color: white;
     }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
-    }
-
+    .btn-primary:hover { transform: translateY(-3px); }
     .btn-outline {
-      background: transparent;
-      border: 2px solid #a78bfa;
-      color: #c4b5fd;
+      background: transparent; border: 2px solid #a78bfa; color: #c4b5fd;
     }
-
     .btn-outline:hover {
-      background: #7c3aed;
-      border-color: #7c3aed;
-      color: white;
-      transform: translateY(-3px);
+      background: #7c3aed; border-color: #7c3aed; color: white; transform: translateY(-3px);
     }
 
-    /* Sections */
-    section {
-      max-width: 1000px;
+    /* Content sections */
+    .page-section {
+      display: none;                 /* HIDDEN by default */
+      max-width: 950px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem 4rem;
+    }
+    .page-section.active {
+      display: block;                /* Only show when active */
     }
 
     .section-title {
-      font-size: 1.8rem;
-      color: #86efac;
-      margin-bottom: 0.5rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 45%;
-      height: 3px;
-      background: linear-gradient(to right, #22c55e, #3b82f6);
-      border-radius: 2px;
-    }
-
-    .section-desc {
-      color: #a8a29e;
-      margin-bottom: 2rem;
-      font-size: 1.05rem;
+      font-size: 1.8rem; color: #86efac; margin-bottom: 1.2rem;
     }
 
     /* About */
-    #about {
-      background: #141211;
-      border-radius: 18px;
-      padding: 2.8rem 2rem;
-      border: 1px solid #292524;
-      margin-top: 2rem;
-    }
-
     .about-text {
-      color: #d6d3d1;
-      font-size: 1.08rem;
-      line-height: 1.85;
-      margin-bottom: 1.5rem;
+      color: #e7e5e4; font-size: 1.1rem; line-height: 1.85; margin-bottom: 1.3rem;
     }
-
     .experience-box {
       background: #1c1917;
-      border-left: 4px solid #22c55e;
-      padding: 1.4rem 1.6rem;
-      border-radius: 0 12px 12px 0;
+      border-left: 5px solid #22c55e;
+      padding: 1.4rem 1.5rem;
+      border-radius: 0 10px 10px 0;
       margin-top: 1.5rem;
     }
-
-    .experience-box h4 {
-      color: #86efac;
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .experience-box .role {
-      color: #f5f5f4;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .experience-box .period {
-      color: #a8a29e;
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .experience-box ul {
-      padding-left: 1.2rem;
-      color: #d6d3d1;
-    }
-
-    .experience-box li {
-      margin-bottom: 0.4rem;
-    }
+    .experience-box h4 { color: #86efac; font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .experience-box .role { color: #ffffff; font-weight: 600; font-size: 1.05rem; }
+    .experience-box .period { color: #a8a29e; font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .experience-box ul { padding-left: 1.3rem; color: #d6d3d1; }
+    .experience-box li { margin-bottom: 0.4rem; }
 
     /* Skills */
-    .skills-category {
-      margin-bottom: 2rem;
-    }
-
-    .skills-category h3 {
-      color: #67e8f9;
-      font-size: 1.15rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
+    .skills-category { margin-bottom: 2rem; }
+    .skills-category h3 { color: #67e8f9; font-size: 1.15rem; margin-bottom: 0.8rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 0.7rem; }
     .skill {
-      background: #1c1917;
-      color: #a7f3d0;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-size: 0.93rem;
-      border: 1px solid #44403c;
-      transition: all 0.3s ease;
-    }
-
-    .skill:hover {
-      background: linear-gradient(135deg, #16a34a, #0ea5e9);
-      color: white;
-      border-color: transparent;
-      transform: translateY(-2px);
+      background: #1c1917; color: #a7f3d0; padding: 0.5rem 1.2rem;
+      border-radius: 50px; font-size: 0.93rem; border: 1px solid #44403c;
     }
 
     /* Projects */
     .project-card {
-      background: #1c1917;
-      border-radius: 14px;
-      padding: 1.6rem;
-      margin-bottom: 1.4rem;
-      border: 1px solid #44403c;
-      transition: all 0.3s ease;
+      background: #1c1917; border-radius: 14px; padding: 1.6rem;
+      margin-bottom: 1.3rem; border: 1px solid #44403c;
     }
+    .project-card h3 { color: #f5f5f4; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .project-card p { color: #a8a29e; margin-bottom: 0.6rem; }
+    .project-tech { color: #67e8f9; font-size: 0.9rem; }
 
-    .project-card:hover {
-      border-color: #22c55e;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.12);
-    }
-
-    .project-card h3 {
-      color: #f5f5f4;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-      color: #a8a29e;
-      margin-bottom: 0.7rem;
-    }
-
-    .project-tech {
-      color: #67e8f9;
-      font-size: 0.9rem;
-    }
-
-    /* CV Download */
+    /* CV */
     .cv-box {
-      background: #1c1917;
-      border-radius: 16px;
-      border: 1px solid #44403c;
-      padding: 2.8rem 2rem;
-      text-align: center;
+      background: #1c1917; border-radius: 16px; border: 1px solid #44403c;
+      padding: 2.5rem 2rem; text-align: center;
     }
-
-    .cv-box h3 {
-      color: #f5f5f4;
-      font-size: 1.4rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .cv-box p {
-      color: #a8a29e;
-      margin-bottom: 1.8rem;
-    }
+    .cv-box h3 { color: #f5f5f4; font-size: 1.4rem; margin-bottom: 0.7rem; }
+    .cv-box p { color: #a8a29e; margin-bottom: 1.6rem; }
 
     /* Contact */
     .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.2rem;
     }
-
     .contact-card {
-      background: #1c1917;
-      border-radius: 14px;
-      padding: 1.5rem;
-      border: 1px solid #44403c;
-      text-align: center;
-      transition: all 0.3s ease;
+      background: #1c1917; border-radius: 14px; padding: 1.5rem;
+      border: 1px solid #44403c; text-align: center;
     }
-
-    .contact-card:hover {
-      border-color: #22c55e;
-      transform: translateY(-3px);
-    }
-
-    .contact-card .icon {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-card a {
-      color: #86efac;
-      text-decoration: none;
-      font-weight: 600;
-      word-break: break-all;
-      font-size: 0.95rem;
-    }
-
-    .contact-card a:hover {
-      color: #a78bfa;
-    }
-
-    .contact-card p {
-      color: #a8a29e;
-      font-size: 0.88rem;
-      margin-top: 0.3rem;
-    }
+    .contact-card .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .contact-card a { color: #86efac; text-decoration: none; font-weight: 600; word-break: break-all; }
+    .contact-card p { color: #a8a29e; font-size: 0.88rem; margin-top: 0.3rem; }
 
     footer {
-      text-align: center;
-      padding: 2.2rem;
-      background: #0c0a09;
-      color: #78716c;
-      border-top: 1px solid #292524;
-      font-size: 0.95rem;
+      text-align: center; padding: 2rem; color: #78716c;
+      border-top: 1px solid #292524; font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      header {
-        padding: 7rem 1.2rem 3rem;
-      }
-      header h1 {
-        font-size: 2.1rem;
-      }
-      .profile-pic {
-        width: 120px;
-        height: 120px;
-      }
-      #about {
-        padding: 2rem 1.3rem;
-      }
-      section {
-        padding: 3rem 1.2rem;
-      }
+      .nav-links { display: none; }
+      header h1 { font-size: 2rem; }
+      .profile-pic { width: 110px; height: 110px; }
     }
   </style>
 </head>
@@ -405,34 +164,36 @@
     <div class="nav-container">
       <div class="logo">Kabtamu | Cybersecurity</div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">CV</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#" class="nav-link" data-section="resume">CV</a></li>
+        <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header>
-    <img src="cv-kabtamu-1.jpg" alt="Kabtamu Getaw Temtim" class="profile-pic">
-    <h1>Kabtamu Getaw Temtim</h1>
-    <p class="subtitle">Computer Science Graduate | Cybersecurity Specialist</p>
-    <p class="tagline">
-      Ethical Hacking • SOC Analysis • Penetration Testing • Incident Response
-    </p>
-    <div class="btn-group">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#resume" class="btn btn-outline">Download CV</a>
-      <a href="#contact" class="btn btn-outline">Contact Me</a>
-    </div>
-  </header>
+  <!-- HOME (Hero) - visible by default -->
+  <section id="home" class="page-section active">
+    <header style="padding-top: 0; background: none;">
+      <img src="cv-kabtamu-1.jpg" alt="Kabtamu Getaw Temtim" class="profile-pic">
+      <h1>Kabtamu Getaw Temtim</h1>
+      <p class="subtitle">Computer Science Graduate | Cybersecurity Specialist</p>
+      <p class="tagline">
+        Ethical Hacking • SOC Analysis • Penetration Testing • Incident Response
+      </p>
+      <div class="btn-group">
+        <a href="#" class="btn btn-primary nav-link" data-section="about">About Me</a>
+        <a href="#" class="btn btn-outline nav-link" data-section="resume">Download CV</a>
+        <a href="#" class="btn btn-outline nav-link" data-section="contact">Contact</a>
+      </div>
+    </header>
+  </section>
 
-  <!-- About -->
-  <section id="about">
+  <!-- ABOUT - hidden until clicked -->
+  <section id="about" class="page-section">
     <h2 class="section-title">About Me</h2>
-    <p class="section-desc">Professional Profile</p>
 
     <p class="about-text">
       I am a results-driven Computer Science graduate from Debre Markos University with hands-on 
@@ -449,7 +210,6 @@
       to contribute to organizational security.
     </p>
 
-    <!-- Experience -->
     <div class="experience-box">
       <h4>Work Experience</h4>
       <div class="role">System Administrator</div>
@@ -461,10 +221,9 @@
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- SKILLS -->
+  <section id="skills" class="page-section">
     <h2 class="section-title">Skills</h2>
-    <p class="section-desc">Technical skills by category</p>
 
     <div class="skills-category">
       <h3>Frontend</h3>
@@ -516,10 +275,9 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="page-section">
     <h2 class="section-title">Projects</h2>
-    <p class="section-desc">Selected work</p>
 
     <div class="project-card">
       <h3>Security Monitoring & Incident Response Platform</h3>
@@ -540,23 +298,19 @@
     </div>
   </section>
 
-  <!-- CV Download Only -->
-  <section id="resume">
+  <!-- CV -->
+  <section id="resume" class="page-section">
     <h2 class="section-title">Curriculum Vitae</h2>
-    <p class="section-desc">Download my complete CV</p>
-
     <div class="cv-box">
       <h3>Kabtamu Getaw Temtim — CV</h3>
-      <p>Click the button below to download my latest Curriculum Vitae (PDF)</p>
+      <p>Click the button below to download my complete Curriculum Vitae (PDF)</p>
       <a href="CV1.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="page-section">
     <h2 class="section-title">Contact</h2>
-    <p class="section-desc">Get in touch</p>
-
     <div class="contact-grid">
       <div class="contact-card">
         <div class="icon">✉️</div>
@@ -584,6 +338,29 @@
   <footer>
     © 2026 Kabtamu Getaw Temtim • Professional Portfolio
   </footer>
+
+  <script>
+    // Show only the selected section
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.page-section');
+
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Remove active from all links
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        // Hide all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Show the selected section
+        const target = this.getAttribute('data-section');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
