@@ -3,127 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kabtamu Getaw Temtim | Cybersecurity Portfolio</title>
+  <title>Kabtamu Getaw Temtim | Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background: #0c0a09;
       color: #f5f5f4;
       line-height: 1.7;
     }
 
+    /* Navigation */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       background: rgba(12, 10, 9, 0.95);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid #292524;
       z-index: 1000;
-      padding: 0.9rem 1.5rem;
+      padding: 1rem 1.5rem;
     }
+
     .nav-container {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     .logo {
-      font-size: 1.15rem; font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 700;
       background: linear-gradient(to right, #86efac, #67e8f9, #c4b5fd);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
     .nav-links a {
-      color: #d6d3d1; text-decoration: none; font-size: 0.95rem; font-weight: 500;
+      color: #d6d3d1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
       transition: color 0.25s;
     }
-    .nav-links a:hover { color: #86efac; }
 
+    .nav-links a:hover {
+      color: #86efac;
+    }
+
+    /* Hero */
     header {
-      background: linear-gradient(135deg, #4c1d95 0%, #1e40af 45%, #0f766e 100%);
-      padding: 7.2rem 1.5rem 3.2rem;
-      text-align: center; position: relative; overflow: hidden;
-    }
-    header::before {
-      content: ''; position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
-      background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 65%);
-      animation: pulse 10s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.12); opacity: 0.8; }
+      background: linear-gradient(135deg, #4c1d95 0%, #1e40af 50%, #0f766e 100%);
+      padding: 8rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     .profile-pic {
-      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
-      border: 5px solid #22c55e;
-      box-shadow: 0 0 0 6px rgba(12,10,9,0.5), 0 12px 30px rgba(0,0,0,0.45);
-      position: relative; z-index: 2; margin-bottom: 1.2rem;
-      object-position: top center;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #22c55e;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.3rem;
+      position: relative;
+      z-index: 2;
     }
 
     header h1 {
-      font-size: 2.5rem; font-weight: 800; margin-bottom: 0.35rem;
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
       background: linear-gradient(to right, #c4b5fd, #67e8f9, #86efac);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      position: relative;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     header .subtitle {
-      font-size: 1.15rem; color: #e0e7ff; margin-bottom: 0.5rem; position: relative;
+      font-size: 1.15rem;
+      color: #e0e7ff;
+      margin-bottom: 0.6rem;
     }
+
     header .tagline {
-      font-size: 1rem; color: #c7d2fe; max-width: 640px;
-      margin: 0 auto 1.8rem; position: relative;
+      font-size: 1rem;
+      color: #c7d2fe;
+      max-width: 600px;
+      margin: 0 auto 2rem;
     }
 
     .btn-group {
-      position: relative; display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 0.8rem;
-    }
-    .btn {
-      display: inline-block; padding: 0.75rem 1.7rem; border-radius: 50px;
-      font-weight: 600; text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #16a34a, #0ea5e9); color: white;
-      box-shadow: 0 4px 18px rgba(22, 163, 74, 0.4);
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px); box-shadow: 0 8px 25px rgba(14, 165, 233, 0.45);
-    }
-    .btn-outline {
-      background: transparent; border: 2px solid #a78bfa; color: #c4b5fd;
-    }
-    .btn-outline:hover {
-      background: #7c3aed; border-color: #7c3aed; color: white; transform: translateY(-3px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
     }
 
-    section { max-width: 1000px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #16a34a, #0ea5e9);
+      color: white;
+      box-shadow: 0 4px 15px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #a78bfa;
+      color: #c4b5fd;
+    }
+
+    .btn-outline:hover {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
 
     .section-title {
-      font-size: 1.85rem; margin-bottom: 0.5rem; color: #86efac;
-      position: relative; display: inline-block;
+      font-size: 1.8rem;
+      color: #86efac;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
     }
+
     .section-title::after {
-      content: ''; position: absolute; bottom: -7px; left: 0; width: 50%; height: 3px;
-      background: linear-gradient(to right, #22c55e, #3b82f6, transparent); border-radius: 2px;
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 45%;
+      height: 3px;
+      background: linear-gradient(to right, #22c55e, #3b82f6);
+      border-radius: 2px;
     }
-    .section-desc { color: #a8a29e; margin-bottom: 1.8rem; font-size: 1.05rem; }
+
+    .section-desc {
+      color: #a8a29e;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
 
     /* About */
     #about {
       background: #141211;
-      border-radius: 20px;
-      margin: 2rem auto;
+      border-radius: 18px;
       padding: 2.8rem 2rem;
       border: 1px solid #292524;
-      max-width: 1000px;
+      margin-top: 2rem;
     }
+
     .about-text {
       color: #d6d3d1;
       font-size: 1.08rem;
       line-height: 1.85;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.5rem;
     }
+
     .experience-box {
       background: #1c1917;
       border-left: 4px solid #22c55e;
@@ -131,51 +208,61 @@
       border-radius: 0 12px 12px 0;
       margin-top: 1.5rem;
     }
+
     .experience-box h4 {
       color: #86efac;
       font-size: 1.1rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
+
     .experience-box .role {
       color: #f5f5f4;
       font-weight: 600;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
+
     .experience-box .period {
       color: #a8a29e;
       font-size: 0.95rem;
       margin-bottom: 0.8rem;
     }
+
     .experience-box ul {
       padding-left: 1.2rem;
       color: #d6d3d1;
     }
+
     .experience-box li {
       margin-bottom: 0.4rem;
     }
 
     /* Skills */
-    .skills-category { margin-bottom: 2rem; }
+    .skills-category {
+      margin-bottom: 2rem;
+    }
+
     .skills-category h3 {
       color: #67e8f9;
       font-size: 1.15rem;
       margin-bottom: 0.9rem;
-      font-weight: 600;
     }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.7rem;
     }
+
     .skill {
       background: #1c1917;
       color: #a7f3d0;
-      padding: 0.5rem 1.15rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 50px;
       font-size: 0.93rem;
       border: 1px solid #44403c;
       transition: all 0.3s ease;
     }
+
     .skill:hover {
       background: linear-gradient(135deg, #16a34a, #0ea5e9);
       color: white;
@@ -192,44 +279,47 @@
       border: 1px solid #44403c;
       transition: all 0.3s ease;
     }
+
     .project-card:hover {
       border-color: #22c55e;
       transform: translateY(-4px);
       box-shadow: 0 10px 25px rgba(34, 197, 94, 0.12);
     }
+
     .project-card h3 {
       color: #f5f5f4;
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
+
     .project-card p {
       color: #a8a29e;
-      font-size: 0.98rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
     }
+
     .project-tech {
       color: #67e8f9;
       font-size: 0.9rem;
     }
 
     /* CV Download */
-    .cv-download-box {
+    .cv-box {
       background: #1c1917;
       border-radius: 16px;
       border: 1px solid #44403c;
-      padding: 2.5rem 2rem;
+      padding: 2.8rem 2rem;
       text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
     }
-    .cv-download-box h3 {
+
+    .cv-box h3 {
       color: #f5f5f4;
       font-size: 1.4rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
     }
-    .cv-download-box p {
+
+    .cv-box p {
       color: #a8a29e;
       margin-bottom: 1.8rem;
-      font-size: 1.05rem;
     }
 
     /* Contact */
@@ -238,29 +328,47 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.2rem;
     }
+
     .contact-card {
       background: #1c1917;
       border-radius: 14px;
-      padding: 1.4rem;
+      padding: 1.5rem;
       border: 1px solid #44403c;
       text-align: center;
       transition: all 0.3s ease;
     }
+
     .contact-card:hover {
       border-color: #22c55e;
       transform: translateY(-3px);
     }
-    .contact-card .icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
-    .contact-card a {
-      color: #86efac; text-decoration: none; font-weight: 600;
-      word-break: break-all; font-size: 0.95rem;
+
+    .contact-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
     }
-    .contact-card a:hover { color: #a78bfa; }
-    .contact-card p { color: #a8a29e; font-size: 0.88rem; margin-top: 0.3rem; }
+
+    .contact-card a {
+      color: #86efac;
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+      font-size: 0.95rem;
+    }
+
+    .contact-card a:hover {
+      color: #a78bfa;
+    }
+
+    .contact-card p {
+      color: #a8a29e;
+      font-size: 0.88rem;
+      margin-top: 0.3rem;
+    }
 
     footer {
       text-align: center;
-      padding: 2.2rem 1.5rem;
+      padding: 2.2rem;
       background: #0c0a09;
       color: #78716c;
       border-top: 1px solid #292524;
@@ -268,12 +376,25 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      header { padding: 6.5rem 1.2rem 2.8rem; }
-      header h1 { font-size: 2rem; }
-      .profile-pic { width: 115px; height: 115px; }
-      #about { margin: 1.5rem 1rem; padding: 2.2rem 1.3rem; }
-      section { padding: 3rem 1.2rem; }
+      .nav-links {
+        display: none;
+      }
+      header {
+        padding: 7rem 1.2rem 3rem;
+      }
+      header h1 {
+        font-size: 2.1rem;
+      }
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+      #about {
+        padding: 2rem 1.3rem;
+      }
+      section {
+        padding: 3rem 1.2rem;
+      }
     }
   </style>
 </head>
@@ -308,27 +429,27 @@
     </div>
   </header>
 
-  <!-- About (Detailed + Experience) -->
+  <!-- About -->
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <p class="section-desc">Professional Profile</p>
 
     <p class="about-text">
-      I am a results-driven Computer Science graduate from Debre Markos University with strong 
-      hands-on cybersecurity training from <strong>INSA</strong> (Information Network Security Administration) 
-      and <strong>Qiyas-AAU</strong> (Addis Ababa University). My focus areas include Ethical Hacking, 
+      I am a results-driven Computer Science graduate from Debre Markos University with hands-on 
+      cybersecurity training from <strong>INSA</strong> (Information Network Security Administration) 
+      and <strong>Qiyas-AAU</strong> (Addis Ababa University). I specialize in Ethical Hacking, 
       SOC Analysis, Active Directory Security, Malware Analysis, threat hunting, and penetration testing.
     </p>
 
     <p class="about-text">
-      I have practical experience in both software development and cybersecurity projects. 
-      I am skilled in using tools such as Kali Linux, Nmap, Burp Suite, Wireshark, and Wazuh, 
-      along with programming languages like Python, Bash, Java, and JavaScript. 
+      I have practical experience in both software development and cybersecurity. 
+      I work with tools such as Kali Linux, Nmap, Burp Suite, Wireshark, and Wazuh, 
+      and I am skilled in Python, Bash, Java, and JavaScript. 
       I am passionate about protecting digital systems and continuously improving my skills 
       to contribute to organizational security.
     </p>
 
-    <!-- Experience from CV -->
+    <!-- Experience -->
     <div class="experience-box">
       <h4>Work Experience</h4>
       <div class="role">System Administrator</div>
@@ -343,7 +464,7 @@
   <!-- Skills -->
   <section id="skills">
     <h2 class="section-title">Skills</h2>
-    <p class="section-desc">Technical skills organized by category</p>
+    <p class="section-desc">Technical skills by category</p>
 
     <div class="skills-category">
       <h3>Frontend</h3>
@@ -398,35 +519,35 @@
   <!-- Projects -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <p class="section-desc">Selected practical work and academic projects</p>
+    <p class="section-desc">Selected work</p>
 
     <div class="project-card">
       <h3>Security Monitoring & Incident Response Platform</h3>
       <p>
-        Developed a cybersecurity platform with a Python backend and React dashboard for 
-        security event collection, real-time threat detection, monitoring, and incident response.
+        Developed a cybersecurity platform with a Python backend and React dashboard 
+        for security event collection, real-time threat detection, monitoring, and incident response.
       </p>
-      <p class="project-tech">Tech: Python • React • Wazuh • Wireshark • SIEM concepts</p>
+      <p class="project-tech">Tech: Python • React • Wazuh • Wireshark • SIEM</p>
     </div>
 
     <div class="project-card">
       <h3>Web-Based Health Information System</h3>
       <p>
-        Final year project — Developed a web application to manage patient records and 
-        appointments, reducing manual errors and improving data handling.
+        Final year project — Built a web application to manage patient records and appointments, 
+        reducing manual errors and improving data handling.
       </p>
-      <p class="project-tech">Tech: PHP • MySQL • HTML • CSS • JavaScript • React Native</p>
+      <p class="project-tech">Tech: PHP • MySQL • HTML • CSS • JavaScript</p>
     </div>
   </section>
 
   <!-- CV Download Only -->
   <section id="resume">
     <h2 class="section-title">Curriculum Vitae</h2>
-    <p class="section-desc">Download my latest CV</p>
+    <p class="section-desc">Download my complete CV</p>
 
-    <div class="cv-download-box">
+    <div class="cv-box">
       <h3>Kabtamu Getaw Temtim — CV</h3>
-      <p>Click the button below to download my complete Curriculum Vitae (PDF)</p>
+      <p>Click the button below to download my latest Curriculum Vitae (PDF)</p>
       <a href="CV1.pdf" class="btn btn-primary" download>Download CV (PDF)</a>
     </div>
   </section>
@@ -434,7 +555,7 @@
   <!-- Contact -->
   <section id="contact">
     <h2 class="section-title">Contact</h2>
-    <p class="section-desc">Let’s connect</p>
+    <p class="section-desc">Get in touch</p>
 
     <div class="contact-grid">
       <div class="contact-card">
@@ -457,16 +578,11 @@
         <a href="https://www.linkedin.com/in/kabtamu21" target="_blank">linkedin.com/in/kabtamu21</a>
         <p>LinkedIn</p>
       </div>
-      <div class="contact-card">
-        <div class="icon">🌐</div>
-        <a href="https://kabtamu1221.github.io/port_folio/" target="_blank">GitHub Portfolio</a>
-        <p>Live Portfolio</p>
-      </div>
     </div>
   </section>
 
   <footer>
-    © 2026 Kabtamu Getaw Temtim • Cybersecurity Portfolio
+    © 2026 Kabtamu Getaw Temtim • Professional Portfolio
   </footer>
 
 </body>
