@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alex Morgan — Product Designer & Developer</title>
-<meta name="description" content="Portfolio of Alex Morgan, product designer and front-end developer.">
+<title>Kabtamu Getaw Temtim — Cybersecurity Specialist</title>
+<meta name="description" content="Portfolio of Kabtamu Getaw Temtim, Computer Science graduate specializing in cybersecurity, SOC analysis, and penetration testing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@ nav ul{display:flex;gap:24px;list-style:none;font-size:.95rem}
 nav ul a{text-decoration:none;color:var(--muted)}
 nav ul a:hover{color:var(--ink)}
 .hero{padding:96px 0 72px}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;max-width:15em;letter-spacing:-.02em}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.1;max-width:16em;letter-spacing:-.02em}
 .hero p{margin-top:24px;max-width:38em;color:var(--muted);font-size:1.15rem}
 .btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 22px;border-radius:6px;text-decoration:none;font-weight:500;font-size:.95rem;border:1px solid var(--ink)}
@@ -44,21 +44,27 @@ h2{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin-bottom:32px}
 .project p{color:var(--muted);font-size:.98rem}
 .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
 .tags li{font-size:.82rem;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
-.project a.link{display:inline-block;margin-top:16px;color:var(--accent);font-weight:500;text-decoration:none}
-.project a.link:hover{text-decoration:underline}
 .about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
 .about p+p{margin-top:16px}
 .skills h3{font-size:1rem;margin-bottom:10px}
 .skills ul{list-style:none;margin-bottom:22px;color:var(--muted)}
 .skills li{padding:6px 0;border-bottom:1px solid var(--line)}
 .timeline{list-style:none}
-.timeline li{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
 .timeline .when{color:var(--muted);font-size:.92rem}
 .timeline h3{font-size:1.05rem}
 .timeline p{color:var(--muted);font-size:.96rem}
+
+/* Certificates */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.cert-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;transition:border-color .2s}
+.cert-card:hover{border-color:var(--accent)}
+.cert-card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px}
+.cert-card p{color:var(--muted);font-size:.95rem}
+
 .contact{text-align:left}
 .contact p{max-width:34em;color:var(--muted);margin-bottom:24px}
-.contact .mail{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.4rem);color:var(--accent);text-decoration:none;word-break:break-all}
+.contact .mail{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.2rem);color:var(--accent);text-decoration:none;word-break:break-all}
 .social{margin-top:28px;display:flex;gap:20px;flex-wrap:wrap}
 .social a{color:var(--muted);text-decoration:none}
 .social a:hover{color:var(--ink);text-decoration:underline}
@@ -75,11 +81,12 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <header>
   <div class="wrap">
     <nav aria-label="Main">
-      <a class="logo" href="#top">Alex Morgan</a>
+      <a class="logo" href="#top">Kabtamu Getaw</a>
       <ul>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -87,94 +94,197 @@ footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 </header>
 
 <main id="top">
+
+  <!-- Hero -->
   <div class="wrap hero">
-    <h1>I design and build clear, useful software for growing teams.</h1>
-    <p>I'm Alex, a product designer and front-end developer with 6 years of experience in fintech and health. I turn complex workflows into interfaces people understand on the first try.</p>
+    <h1>I secure systems and build practical software that protects digital assets.</h1>
+    <p>
+      I'm Kabtamu, a Computer Science graduate with hands-on cybersecurity training from INSA and Qiyas-AAU. 
+      I specialize in SOC analysis, penetration testing, incident response, and secure software development.
+    </p>
     <div class="btns">
       <a class="btn primary" href="#work">View my work</a>
-      <a class="btn" href="resume.pdf" download>Download résumé</a>
+      <a class="btn" href="CV1.pdf" download>Download CV</a>
     </div>
   </div>
 
+  <!-- Work / Projects -->
   <section id="work">
     <div class="wrap">
       <h2>Selected work</h2>
       <div class="projects">
+
         <article class="project">
-          <div class="thumb" role="img" aria-label="Project preview">Ledgerly</div>
+          <div class="thumb" role="img" aria-label="Project preview">Security Platform</div>
           <div>
-            <h3>Ledgerly: invoicing for freelancers</h3>
-            <p>Redesigned the invoice flow, cutting the time to send a first invoice from 9 minutes to 3. Led research, design and the React front end.</p>
-            <ul class="tags"><li>Product design</li><li>React</li><li>User research</li></ul>
-            <a class="link" href="#">Read the case study</a>
+            <h3>Security Monitoring & Incident Response Platform</h3>
+            <p>
+              Built a cybersecurity platform with a Python backend and React dashboard for security event collection, 
+              real-time threat detection, monitoring, and incident response using Wazuh and SIEM concepts.
+            </p>
+            <ul class="tags">
+              <li>Python</li>
+              <li>React</li>
+              <li>Wazuh</li>
+              <li>SIEM</li>
+            </ul>
           </div>
         </article>
+
         <article class="project">
-          <div class="thumb" role="img" aria-label="Project preview">CareTrack</div>
+          <div class="thumb" role="img" aria-label="Project preview">Health System</div>
           <div>
-            <h3>CareTrack: patient scheduling app</h3>
-            <p>Built a scheduling dashboard used by 40 clinics, reducing missed appointments by 22% through reminders and simpler rebooking.</p>
-            <ul class="tags"><li>UX design</li><li>TypeScript</li><li>Accessibility</li></ul>
-            <a class="link" href="#">Read the case study</a>
+            <h3>Web-Based Health Information System</h3>
+            <p>
+              Final year project — Developed a web application to manage patient records and appointments, 
+              reducing manual errors and improving data handling efficiency.
+            </p>
+            <ul class="tags">
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+            </ul>
           </div>
         </article>
-        <article class="project">
-          <div class="thumb" role="img" aria-label="Project preview">Atlas UI</div>
-          <div>
-            <h3>Atlas UI: design system</h3>
-            <p>Created a component library of 60+ accessible components, shared across four product teams.</p>
-            <ul class="tags"><li>Design systems</li><li>Storybook</li><li>CSS</li></ul>
-            <a class="link" href="#">View on GitHub</a>
-          </div>
-        </article>
+
       </div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about">
     <div class="wrap about">
       <div>
         <h2>About</h2>
-        <p>I work where design and engineering meet. I start with the person using the product, test ideas early, and ship them myself when needed.</p>
-        <p>Outside of work I mentor new designers and write about accessible design. Currently open to senior product design roles and select freelance projects.</p>
+        <p>
+          I am a results-driven Computer Science graduate from Debre Markos University with practical 
+          cybersecurity training from INSA (Information Network Security Administration) and Qiyas-AAU 
+          (Addis Ababa University).
+        </p>
+        <p>
+          My focus is on Ethical Hacking, SOC Analysis, Active Directory Security, Malware Analysis, 
+          threat hunting, and penetration testing. I enjoy solving real security problems and building 
+          tools that help protect systems and data.
+        </p>
+        <p>
+          I am currently seeking a cybersecurity role where I can apply my skills and continue growing 
+          in the field.
+        </p>
       </div>
       <div class="skills">
-        <h3>Design</h3>
-        <ul><li>Figma, prototyping</li><li>User research</li><li>Design systems</li></ul>
+        <h3>Cybersecurity</h3>
+        <ul>
+          <li>Penetration Testing</li>
+          <li>SOC Analysis</li>
+          <li>Incident Response</li>
+          <li>Threat Hunting</li>
+          <li>Network Security</li>
+        </ul>
         <h3>Development</h3>
-        <ul><li>HTML, CSS, JavaScript</li><li>React, TypeScript</li><li>Accessibility (WCAG 2.2)</li></ul>
+        <ul>
+          <li>Python, Bash, Java</li>
+          <li>JavaScript, React</li>
+          <li>HTML, CSS, Node.js</li>
+        </ul>
+        <h3>Tools</h3>
+        <ul>
+          <li>Kali Linux, Nmap</li>
+          <li>Burp Suite, Wireshark</li>
+          <li>Wazuh / SIEM</li>
+        </ul>
       </div>
     </div>
   </section>
 
+  <!-- Experience -->
   <section id="experience">
     <div class="wrap">
       <h2>Experience</h2>
       <ol class="timeline">
-        <li><span class="when">2023 – Present</span><div><h3>Senior Product Designer, Northwind</h3><p>Lead design for the payments team of 12. Introduced a shared design system.</p></div></li>
-        <li><span class="when">2020 – 2023</span><div><h3>Product Designer, Brightside Health</h3><p>Designed patient-facing web and mobile experiences used by 200k people.</p></div></li>
-        <li><span class="when">2018 – 2020</span><div><h3>Front-end Developer, Pixel &amp; Co.</h3><p>Built websites and web apps for 25+ small businesses.</p></div></li>
+        <li>
+          <span class="when">Sep 2025 – Dec 2025</span>
+          <div>
+            <h3>System Administrator — Super Double T General Trading PLC</h3>
+            <p>
+              Configured and maintained network and server infrastructure for secure operations. 
+              Hardened systems and managed user access controls across Windows and Linux environments.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2025</span>
+          <div>
+            <h3>BSc in Computer Science — Debre Markos University</h3>
+            <p>Graduated with strong foundation in programming, networking, and system administration.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2026</span>
+          <div>
+            <h3>Cybersecurity Training — INSA & Qiyas-AAU</h3>
+            <p>
+              Intensive training in Network Security, SOC Monitoring, Incident Response, 
+              Penetration Testing, Vulnerability Assessment, and SIEM.
+            </p>
+          </div>
+        </li>
       </ol>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <!-- Certificates (Added) -->
+  <section id="certificates">
     <div class="wrap">
-      <h2>Contact</h2>
-      <p>Have a project or role in mind? I reply within two working days.</p>
-      <a class="mail" href="mailto:hello@alexmorgan.com">hello@alexmorgan.com</a>
-      <div class="social">
-        <a href="https://linkedin.com/in/yourname">LinkedIn</a>
-        <a href="https://github.com/yourname">GitHub</a>
-        <a href="https://dribbble.com/yourname">Dribbble</a>
+      <h2>Certificates</h2>
+      <div class="certs">
+
+        <div class="cert-card">
+          <h3>Programming Fundamentals</h3>
+          <p>Udacity • August 2024<br>5 Million Ethiopian Coders</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Android Developer Fundamentals</h3>
+          <p>Udacity • August 2024<br>5 Million Ethiopian Coders</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Data Analysis Fundamentals</h3>
+          <p>Udacity • October 2024<br>5 Million Ethiopian Coders</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>Cybersecurity & Digital Risk Management</h3>
+          <p>Qiyas-AAU (Addis Ababa University)<br>Project Training</p>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Interested in working together or have a role that fits my profile? Feel free to reach out.</p>
+      <a class="mail" href="mailto:kabtamugetaw589@gmail.com">kabtamugetaw589@gmail.com</a>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/kabtamu21" target="_blank">LinkedIn</a>
+        <a href="tel:+251942490342">+251 942 490 342</a>
+        <a href="https://kabtamu1221.github.io/port_folio/" target="_blank">Portfolio</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  <div class="wrap">© <span id="yr"></span> Alex Morgan. All rights reserved.</div>
+  <div class="wrap">© <span id="yr"></span> Kabtamu Getaw Temtim. All rights reserved.</div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
